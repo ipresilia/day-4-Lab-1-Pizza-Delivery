@@ -1,8 +1,10 @@
-# Set up the project
-done = false
-restaurant = "Ezio's Pizza Place"
+require_relative "Menu.rb"
 
-puts "Hello, welcome to #{restaurant}!"
+menu = Menu.new
+
+done = false
+
+puts "Hello, welcome to our pizza express delivery"
 
 #this will run until done is set to true
 while not done
@@ -11,27 +13,25 @@ while not done
   puts "2: Nothing"
   puts "------------------------------"
 
-  #user input
+  #get some input from the customer
   choice = gets.chomp.to_i
   case choice
     when 1
-      puts "Let me show you the menu"
+      menu.print
     when 2
       done = true
     else
-      "Hmmm.. Try again.."
+      "I dont understand"
   end
 
   #say goodbye if the customer is leaving
-   if done
-     puts "Thank you for visiting #{restaurant}! Hope to see you again soon."
-     puts "   __"
-     puts " // \"\"--.._"
-     puts "||  (_)  _ \"-._"
-     puts "||    _ (_)    '-."
-     puts "||   (_)   __..-'"
-     puts " \\__..--\"\""
-   end
- end
-
- 
+  if done
+    puts "Thank you for your visit! hope to see you again soon."
+    puts "   __"
+    puts " // \"\"--.._"
+    puts "||  (_)  _ \"-._"
+    puts "||    _ (_)    '-."
+    puts "||   (_)   __..-'"
+    puts " \\__..--\"\""
+  end
+end
